@@ -15,6 +15,7 @@ const winnerText = document.getElementById("winnerText");
 const restartBtn = document.getElementById("restartBtn");
 
 let gameStarted = false;
+let gameOver = false;
 const winningScore = 5;
 
 // start the game
@@ -165,6 +166,8 @@ function updateScore() {
         score1.textContent = parseInt(score1.textContent) + 1;
         resetBall(1);
     }
+
+    checkWinner();
 }
 
 function resetBall(direction) {
@@ -174,7 +177,29 @@ function resetBall(direction) {
     ball.speedY = 4 * (Math.random() > 0.5 ? 1 : -1);
 }
 
+// winner check
+function checkWinner() {
+    const player1Score = parseInt(score1.textContent);
+    const player2Score = parseInt(score2.textContent);
+
+    if (player1Score >= winningScore) {
+        endGame("Player 1 wins!");
+    } else if (player2Score >= winningScore) {
+        endGame("Player 2 wins!");
+    }
+}
+
+function endGame(winner) {
+    gameOver = true;
+    winnerText.textContent = winner;
+    winnerPage.classList.add("show");
+    gamePage.classList.remove("show");
+}
+
 function gameLoop() {
+
+    if (gameOver) return;
+
     movePaddles();
     moveBall();
     checkCollision();
@@ -182,5 +207,7 @@ function gameLoop() {
     updateScore();
     drawGame();
 
-    requestAnimationFrame(gameLoop);
+    if (!gameOver) {
+        requestAnimationFrame(gameLoop);
+    }
 }
