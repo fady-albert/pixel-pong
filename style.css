@@ -39,11 +39,13 @@ body{
     flex-direction: column;
     gap: 25px;
     opacity: 1;
+    visibility: visible;
     transition: all 0.3s ease-in-out;
 }
 
 .startPage.hidden{
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
 }
 
