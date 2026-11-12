@@ -10,6 +10,13 @@ const ctx = canvas.getContext("2d");
 const score1 = document.getElementById("score1");
 const score2 = document.getElementById("score2");
 
+const winnerPage = document.getElementById("winnerPage");
+const winnerText = document.getElementById("winnerText");
+const restartBtn = document.getElementById("restartBtn");
+
+let gameStarted = false;
+const winningScore = 5;
+
 // start the game
 startButton.addEventListener("click", () => {
     startPage.classList.add("hidden");
@@ -166,8 +173,6 @@ function resetBall(direction) {
     ball.speedX = 4 * direction;
     ball.speedY = 4 * (Math.random() > 0.5 ? 1 : -1);
 }
-
-let gameStarted = false;
 
 function gameLoop() {
     movePaddles();
