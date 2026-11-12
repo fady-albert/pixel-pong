@@ -38,6 +38,13 @@ body{
     justify-content: center;
     flex-direction: column;
     gap: 25px;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.startPage.hidden{
+    opacity: 0;
+    pointer-events: none;
 }
 
 .startPage h1{
