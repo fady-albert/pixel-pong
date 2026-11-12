@@ -168,3 +168,56 @@ canvas{
     height: 100%;
     background: var(--black);
 }
+
+/* winner page */
+.winnerPage{
+    position: absolute;
+    background: var(--gray);
+    width: calc(100% - 100px);
+    height: calc(100% - 100px);
+    top: 50px;
+    left: 50px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.winnerPage.show{
+    visibility: visible;
+    opacity: 1;
+}
+
+.winnerPage h1{
+    color: var(--ball);
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.winnerPage button{
+    width: 200px;
+    height: 50px;
+    background: var(--ball);
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.winnerPage button:hover{
+    scale: 1.05;
+}
+
+.winnerPage button:active{
+    scale: 0.95;
+}
