@@ -196,6 +196,22 @@ function endGame(winner) {
     gamePage.classList.remove("show");
 }
 
+restartBtn.addEventListener("click", () => {
+    score1.textContent = "0";
+    score2.textContent = "0";
+
+    player1.y = canvasHeight / 2 - paddleHeight / 2;
+    player2.y = canvasHeight / 2 - paddleHeight / 2;
+
+    resetBall(1);
+
+    gameOver = false;
+    winnerPage.classList.remove("show");
+    gamePage.classList.add("show");
+
+    gameLoop();
+});
+
 function gameLoop() {
 
     if (gameOver) return;
