@@ -146,7 +146,7 @@ body{
     align-items: center;
     justify-content: center;
     width: 50%;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
 }
 
 .gameBoard{
@@ -159,4 +159,11 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+canvas{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--black);
 }
